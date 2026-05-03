@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Saúde</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav {
+            background: #fff;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .btn-nav {
+            padding: 10px 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .btn-nav:hover, .btn-nav.active {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .pagina {
+            display: none;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            animation: fadeIn 0.5s;
+        }
+        .pagina.active { display: block; }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        h2 { color: #28a745; margin-bottom: 15px; border-left: 4px solid #28a745; padding-left: 10px; }
+        h3 { color: #007bff; margin: 20px 0 10px 0; }
+        .img-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #e9ecef;
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #20c997;
+        }
+        .btn-acao {
+            padding: 12px 25px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px 10px 0;
+        }
+        .btn-acao:hover { background: #218838; }
+        ul { margin-left: 20px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #343a40;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portal da Saúde Completa</h1>
+        <p>Cuide do seu corpo e mente todos os dias</p>
+    </header>
+
+    <nav>
+        <button class="btn-nav active" onclick="mostrarPagina('inicio')">Início</button>
+        <button class="btn-nav" onclick="mostrarPagina('alimentacao')">Alimentação</button>
+        <button class="btn-nav" onclick="mostrarPagina('exercicio')">Exercício</button>
+        <button class="btn-nav" onclick="mostrarPagina('mental')">Saúde Mental</button>
+        <button class="btn-nav" onclick="mostrarPagina('sono')">Sono</button>
+        <button class="btn-nav" onclick="mostrarPagina('checkup')">Check-up</button>
+    </nav>
+
+    <div class="container">
+        <!-- PÁGINA 1: INÍCIO -->
+        <div id="inicio" class="pagina active">
+            <h2>Bem-vindo ao Portal da Saúde</h2>
+            <img src="images (1).jpeg">
+            
+            <div class="card">
+                <h3>Por que cuidar da saúde?</h3>
+                <p>Ter hábitos saudáveis aumenta tua energia, previne doenças e melhora tua qualidade de vida. Usa os botões acima pra navegar pelos temas.</p>
+            </div>
+            
+            <h3>Os 5 Pilares da Saúde</h3>
+            <ul>
+                <li><strong>Alimentação:</strong> Base de tudo</li>
+                <li><strong>Exercício:</strong> Corpo em movimento</li>
+                <li><strong>Saúde Mental:</strong> Mente equilibrada</li>
+                <li><strong>Sono:</strong> Recuperação essencial</li>
+                <li><strong>Prevenção:</strong> Check-ups regulares</li>
+            </ul>
+            <button class="btn-acao" onclick="mostrarPagina('alimentacao')">Começar pela Alimentação</button>
+        </div>
+
+        <!-- PÁGINA 2: ALIMENTAÇÃO -->
+        <div id="alimentacao" class="pagina">
+            <h2>Alimentação Saudável</h2>
+            <img src="alimentos-e-saúde-mental.jpg">
+            
+            <h3>Regra do Prato</h3>
+            <div class="card">
+                <p>Divide teu prato assim: 50% legumes e verduras, 25% proteínas, 25% carboidratos.</p>
+            </div>
+            
+            <h3>Alimentos que não podem faltar</h3>
+            <ul>
+                <li>Frutas: 3 porções por dia</li>
+                <li>Água: mínimo 2 litros por dia</li>
+                <li>Fibras: aveia, chia, linhaça</li>
+                <li>Gorduras boas: abacate, azeite, castanhas</li>
+            </ul>
+            <button class="btn-acao" onclick="alert('Dica: Come uma fruta antes de cada refeição principal!')">Dica Rápida</button>
+            <button class="btn-acao" onclick="mostrarPagina('exercicio')">Próximo: Exercícios</button>
+        </div>
+
+        <!-- PÁGINA 3: EXERCÍCIO -->
+        <div id="exercicio" class="pagina">
+            <h2>Exercício Físico</h2>
+            <img src="images.jpeg">
+            
+            <h3>Meta da OMS: 150 min por semana</h3>
+            <div class="card">
+                <p>30 minutos por dia, 5x na semana. Pode ser caminhada, dança, subir escada.</p>
+            </div>
+            
+            <h3>Treino rápido de 10 minutos</h3>
+            <ul>
+                <li>1 min polichinelo</li>
+                <li>1 min agachamento</li>
+                <li>1 min prancha</li>
+                <li>1 min flexão - Repete 2x</li>
+            </ul>
+            <button class="btn-acao" onclick="mostrarPagina('mental')">Próximo: Saúde Mental</button>
+        </div>
+
+        <!-- PÁGINA 4: SAÚDE MENTAL -->
+        <div id="mental" class="pagina">
+            <h2>Saúde Mental</h2>
+            <img src="images (3).jpeg">
+            
+            <h3>Técnica 5-4-3-2-1 pra ansiedade</h3>
+            <div class="card">
+                <p>Olha ao redor e identifica: 5 coisas que vê, 4 que pode tocar, 3 que ouve, 2 que cheira, 1 que sente o gosto.</p>
+            </div>
+            
+            <h3>Hábitos diários</h3>
+            <ul>
+                <li>10 min de meditação/respiração</li>
+                <li>Escreve 3 coisas boas do dia</li>
+                <li>Desconecta do celular 1h antes de dormir</li>
+            </ul>
+            <button class="btn-acao" onclick="alert('Respira fundo: inspira 4s, segura 4s, solta 6s. Repete 3x.')">Fazer Respiração Agora</button>
+            <button class="btn-acao" onclick="mostrarPagina('sono')">Próximo: Sono</button>
+        </div>
+
+        <!-- PÁGINA 5: SONO -->
+        <div id="sono" class="pagina">
+            <h2>Qualidade do Sono</h2>
+            <img src="images (6).jpeg">
+           
+            
+            <h3>Regra dos 90 minutos</h3>
+            <div class="card">
+                <p>Dormimos em ciclos de 90 min. Acordar no fim do ciclo te deixa menos grogue. 7.5h = 5 ciclos.</p>
+            </div>
+            
+            <h3>Higiene do Sono</h3>
+            <ul>
+                <li>Quarto escuro e fresco 18-22°C</li>
+                <li>Sem telas 1h antes de deitar</li>
+                <li>Mesmo horário pra dormir e acordar</li>
+                <li>Evita café depois das 16h</li>
+            </ul>
+            <button class="btn-acao" onclick="mostrarPagina('checkup')">Próximo: Check-up</button>
+        </div>
+
+        <!-- PÁGINA 6: CHECK-UP -->
+        <div id="checkup" class="pagina">
+            <h2>Prevenção e Check-up</h2>
+            <img src="images (7).jpeg"><img src="images (8).jpeg">
+        
+            
+            <h3>Exames anuais básicos</h3>
+            <div class="card">
+                <p>Mesmo sem sintomas, faz 1x por ano: hemograma, glicose, colesterol, pressão.</p>
+            </div>
+            
+            <h3>Sinais de alerta</h3>
+            <ul>
+                <li>Cansaço extremo por +2 semanas</li>
+                <li>Perda de peso sem motivo</li>
+                <li>Dor de cabeça forte e constante</li>
+                <li>Mudanças na pele ou pintas</li>
+            </ul>
+            <button class="btn-acao" onclick="mostrarPagina('inicio')">Voltar ao Início</button>
+            <button class="btn-acao" onclick="window.open('https://wa.me/?text=Olha esse Portal da Saúde que fiz!', '_blank')">Compartilhar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Portal da Saúde © 2026 - Cuida de ti</p>
+    </footer>
+
+    <script>
+        function mostrarPagina(id) {
+            // Esconde todas as páginas
+            document.querySelectorAll('.pagina').forEach(pag => {
+                pag.classList.remove('active');
+            });
+            // Mostra a página clicada
+            document.getElementById(id).classList.add('active');
+            
+            // Atualiza botão ativo
+            document.querySelectorAll('.btn-nav').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Rola pro topo
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
